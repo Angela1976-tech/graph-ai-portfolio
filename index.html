@@ -1,5 +1,4 @@
-<script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/06/01/17/20250601174110-781Y2A4O.js"></script> HERE is the html file: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -80,6 +79,16 @@
     }
     .cv-link:hover{background:#25683c;text-decoration:none}
 
+    /* Consultation form styling */
+    #contact-consultation iframe{
+      width:100%;
+      max-width:640px;
+      height:860px;
+      border:none;
+      margin:0 auto;
+      display:block;
+    }
+
     footer{text-align:center;font-size:.85rem;padding:1rem 0;color:var(--forest)}
 
     @media(max-width:650px){
@@ -150,44 +159,42 @@
     </section>
 
     <!-- Weekly submissions -->
-<section id="submissions">
-  <h2>My weekly submissions</h2>
-  <p>Click the buttons below to view each week’s assignment:</p>
-  <ul>
-    <li>
-      <span>Week 1:</span>
-      <a
-        class="cv-link"
-        href="index.html"
-        target="_blank"
-        rel="noopener"
-      >
-        View Week 1 Assignment
-      </a>
-    </li>
-    <li>
-      <span>Week 2:</span>
-      <a
-        class="cv-link"
-        href="report.html"
-        target="_blank"
-        rel="noopener"
-      >
-        View Week 2 Assignment
-      </a>
-    </li>
-    <li>
-      <span>Week 3:</span>
-      <a
-        class="cv-link"
-        href="job_analysis_report.html"
-        target="_blank"
-        rel="noopener"
-      >
-        View Week 3 Assignment
-      </a>
-    </li>
-  </ul>
-</section>
+    <section id="submissions">
+      <h2>My weekly submissions</h2>
+      <p>Click the buttons below to view each week’s assignment:</p>
+      <ul>
+        <li>
+          <span>Week 1:</span>
+          <a class="cv-link" href="index.html" target="_blank" rel="noopener">View Week 1 Assignment</a>
+        </li>
+        <li>
+          <span>Week 2:</span>
+          <a class="cv-link" href="report.html" target="_blank" rel="noopener">View Week 2 Assignment</a>
+        </li>
+        <li>
+          <span>Week 3:</span>
+          <a class="cv-link" href="job_analysis_report.html" target="_blank" rel="noopener">View Week 3 Assignment</a>
+        </li>
         <li><span>Week 4:</span> <em>Coming soon</em></li>
-        <li><span>Week 5:</span> <em>Coming soon</
+        <li><span>Week 5:</span> <em>Coming soon</em></li>
+      </ul>
+    </section>
+
+    <!-- Contact for Consultation -->
+    <section id="contact-consultation">
+      <h2>Contact for Consultation</h2>
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetzFONDftskbUQKKNqqZ2t3CyORq1k447KRLGdNq5pgK4SGQ/viewform?embedded=true" width="640" height="860" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botpress Chat Widget -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/06/01/17/20250601174110-781Y2A4O.js"></script>
+
+  <footer>
+    &copy; 2025 Dr. Angela Baschieri
+  </footer>
+</body>
+</html>
