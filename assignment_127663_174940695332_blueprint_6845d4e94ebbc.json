@@ -1,0 +1,972 @@
+
+
+
+{
+    "name": "Integration Google Sheets",
+    "flow": [
+        {
+            "id": 1,
+            "module": "google-sheets:watchRows",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 3752733,
+                "mode": "select",
+                "includesHeaders": true,
+                "limit": 1,
+                "valueRenderOption": "FORMATTED_VALUE",
+                "dateTimeRenderOption": "FORMATTED_STRING",
+                "from": "drive",
+                "spreadsheetId": "/1edv1d4gTHBcC8oVUorsj7bqUII95dhqo/1Fpe4LA_lvgzzBDArHBR6cnQnz5F0ouvjMt2ySs_AUdk",
+                "sheetId": "Form Responses 1",
+                "tableFirstRow": "A1:Z1"
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Google connection (angela.ethiopia@gmail.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            }
+                        },
+                        "mode": {
+                            "label": "Search by path"
+                        },
+                        "includesHeaders": {
+                            "label": "Yes"
+                        },
+                        "valueRenderOption": {
+                            "mode": "chose",
+                            "label": "Formatted value"
+                        },
+                        "dateTimeRenderOption": {
+                            "mode": "chose",
+                            "label": "Formatted string"
+                        },
+                        "from": {
+                            "label": "My Drive"
+                        },
+                        "spreadsheetId": {
+                            "path": [
+                                "Gen AI Consultation",
+                                "Gen AI Inquiry (Responses)"
+                            ]
+                        },
+                        "sheetId": {
+                            "label": "Form Responses 1"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:google",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "mode",
+                        "type": "select",
+                        "label": "Search Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "select",
+                                "fromAll",
+                                "map"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "includesHeaders",
+                        "type": "select",
+                        "label": "Table contains headers",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit",
+                        "required": true
+                    },
+                    {
+                        "name": "valueRenderOption",
+                        "type": "select",
+                        "label": "Value render option",
+                        "validate": {
+                            "enum": [
+                                "FORMATTED_VALUE",
+                                "UNFORMATTED_VALUE",
+                                "FORMULA"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "dateTimeRenderOption",
+                        "type": "select",
+                        "label": "Date and time render option",
+                        "validate": {
+                            "enum": [
+                                "SERIAL_NUMBER",
+                                "FORMATTED_STRING"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "type": "select",
+                        "label": "Drive",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "drive",
+                                "share",
+                                "team"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "spreadsheetId",
+                        "type": "file",
+                        "label": "Spreadsheet ID",
+                        "required": true
+                    },
+                    {
+                        "name": "sheetId",
+                        "type": "select",
+                        "label": "Sheet Name",
+                        "required": true
+                    },
+                    {
+                        "name": "tableFirstRow",
+                        "type": "text",
+                        "label": "Row with headers",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__ROW_NUMBER__",
+                        "label": "Row number",
+                        "type": "number"
+                    },
+                    {
+                        "name": "__SPREADSHEET_ID__",
+                        "label": "Spreadsheet ID",
+                        "type": "text"
+                    },
+                    {
+                        "name": "__SHEET__",
+                        "label": "Sheet",
+                        "type": "text"
+                    },
+                    {
+                        "name": "0",
+                        "label": "Timestamp (A)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "1",
+                        "label": "Name\n  (B)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "2",
+                        "label": "Email\n  (C)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "3",
+                        "label": "What is your company name and primary geographic area? (D)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "4",
+                        "label": "What would you like help with? (E)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "5",
+                        "label": "(F)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "6",
+                        "label": "(G)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "7",
+                        "label": "(H)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "8",
+                        "label": "(I)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "9",
+                        "label": "(J)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "10",
+                        "label": "(K)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "11",
+                        "label": "(L)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "12",
+                        "label": "(M)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "13",
+                        "label": "(N)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "14",
+                        "label": "(O)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "15",
+                        "label": "(P)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "16",
+                        "label": "(Q)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "17",
+                        "label": "(R)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "18",
+                        "label": "(S)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "19",
+                        "label": "(T)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "20",
+                        "label": "(U)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "21",
+                        "label": "(V)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "22",
+                        "label": "(W)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "23",
+                        "label": "(X)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "24",
+                        "label": "(Y)",
+                        "type": "text"
+                    },
+                    {
+                        "name": "25",
+                        "label": "(Z)",
+                        "type": "text"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "open-router:createAChatCompletion",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 3752805
+            },
+            "mapper": {
+                "messages": [
+                    {
+                        "content": "A potential client has filled out a form on my website requesting generative AI consulting services. Research the company/organization below and create a clear, elegant markdown report that covers an introduction to the business as well as potential generative AI opportunities for their work.\n\nUse emojis, tables, and lists for visual appeal while keeping your writing clear and concise.\n\nIf you cannot find online information about the company, just indicate so.\n\nDo not include any prelude or postlude.\n\nCompany Name and Geography:{{1.`3`}}",
+                        "role": "user"
+                    }
+                ],
+                "model": "openai/gpt-4o-search-preview",
+                "fallback": true,
+                "json_mode": false,
+                "n": "1",
+                "temperature": "1",
+                "top_p": "1"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My OpenRouter connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "open-router-4ur2vj"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "messages": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "role": {
+                                        "mode": "chose",
+                                        "label": "User"
+                                    }
+                                }
+                            ]
+                        },
+                        "model": {
+                            "mode": "chose",
+                            "label": "OpenAI: GPT-4o Search Preview"
+                        },
+                        "fallback": {
+                            "mode": "chose"
+                        },
+                        "json_mode": {
+                            "mode": "chose"
+                        },
+                        "stop": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:open-router-4ur2vj",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "messages",
+                        "type": "array",
+                        "label": "Messages",
+                        "required": true,
+                        "spec": [
+                            {
+                                "name": "content",
+                                "type": "text",
+                                "label": "Content",
+                                "required": true
+                            },
+                            {
+                                "name": "role",
+                                "type": "select",
+                                "label": "Role",
+                                "options": [
+                                    {
+                                        "label": "User",
+                                        "value": "user"
+                                    },
+                                    {
+                                        "label": "Assistant",
+                                        "value": "assistant"
+                                    },
+                                    {
+                                        "label": "System",
+                                        "value": "system"
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "model",
+                        "type": "select",
+                        "label": "Model",
+                        "required": true
+                    },
+                    {
+                        "name": "fallback",
+                        "type": "boolean",
+                        "label": "Enable automatic Fallback?"
+                    },
+                    {
+                        "name": "json_mode",
+                        "type": "boolean",
+                        "label": "Enable JSON Mode?"
+                    },
+                    {
+                        "name": "max_tokens",
+                        "type": "integer",
+                        "label": "Max Tokens"
+                    },
+                    {
+                        "name": "n",
+                        "type": "integer",
+                        "label": "Number of Choices",
+                        "validate": {
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "temperature",
+                        "type": "number",
+                        "label": "Temperature",
+                        "validate": {
+                            "max": 2,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "top_p",
+                        "type": "number",
+                        "label": "Top P",
+                        "validate": {
+                            "max": 1,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "frequency_penalty",
+                        "type": "number",
+                        "label": "Frequency Penalty",
+                        "validate": {
+                            "max": 2,
+                            "min": -2
+                        }
+                    },
+                    {
+                        "name": "presence_penalty",
+                        "type": "number",
+                        "label": "Presence Penalty",
+                        "validate": {
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "type": "integer",
+                        "label": "Seed"
+                    },
+                    {
+                        "name": "stop",
+                        "type": "array",
+                        "label": "Stop Sequences",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "top_k",
+                        "type": "number",
+                        "label": "Top k"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "markdown:Compile",
+            "version": 2,
+            "parameters": {},
+            "mapper": {
+                "data": "{{2.choices[].message.content}}",
+                "gfm": true,
+                "sanitize": true,
+                "sanitizeOutputType": "PROFILED_HTML",
+                "wholeDocument": false,
+                "html": true,
+                "svg": false,
+                "mathM1": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "gfm": {
+                            "mode": "chose"
+                        },
+                        "sanitize": {
+                            "mode": "chose"
+                        },
+                        "sanitizeOutputType": {
+                            "mode": "chose",
+                            "label": "Predefined Profiles"
+                        },
+                        "forbiddenTags": {
+                            "mode": "chose"
+                        },
+                        "forbiddenAttr": {
+                            "mode": "chose"
+                        },
+                        "addedTags": {
+                            "mode": "chose"
+                        },
+                        "addedAttr": {
+                            "mode": "chose"
+                        },
+                        "wholeDocument": {
+                            "mode": "chose"
+                        },
+                        "html": {
+                            "mode": "chose"
+                        },
+                        "svg": {
+                            "mode": "chose"
+                        },
+                        "mathM1": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "data",
+                        "type": "text",
+                        "label": "Markdown"
+                    },
+                    {
+                        "name": "gfm",
+                        "type": "boolean",
+                        "label": "GitHub Flavored Markdown",
+                        "required": true
+                    },
+                    {
+                        "name": "sanitize",
+                        "type": "boolean",
+                        "label": "Sanitize",
+                        "required": true
+                    },
+                    {
+                        "name": "sanitizeOutputType",
+                        "type": "select",
+                        "label": "Output Type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "PROFILED_HTML",
+                                "PREDEFINED_TAGS_ATTR"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "forbiddenTags",
+                        "type": "array",
+                        "label": "Forbidden Tags",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "forbiddenAttr",
+                        "type": "array",
+                        "label": "Forbidden Attributes",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "addedTags",
+                        "type": "array",
+                        "label": "Extended List of Allowed Tags",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "addedAttr",
+                        "type": "array",
+                        "label": "Extended List of Allowed Attributes",
+                        "spec": {
+                            "type": "text",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "wholeDocument",
+                        "type": "boolean",
+                        "label": "Return Entire Document Including html <tags>",
+                        "required": true
+                    },
+                    {
+                        "name": "html",
+                        "type": "boolean",
+                        "label": "HTML",
+                        "required": true
+                    },
+                    {
+                        "name": "svg",
+                        "type": "boolean",
+                        "label": "SVG",
+                        "required": true
+                    },
+                    {
+                        "name": "mathM1",
+                        "type": "boolean",
+                        "label": "Math ML",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "google-docs:createADocument",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 3752733
+            },
+            "mapper": {
+                "name": "GenAI Web Report for{{1.`3`}}",
+                "content": "<html>",
+                "destination": "drive",
+                "header": false,
+                "footer": false,
+                "folderId": "/1edv1d4gTHBcC8oVUorsj7bqUII95dhqo"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Google connection (angela.ethiopia@gmail.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "destination": {
+                            "label": "My Drive"
+                        },
+                        "folderId": {
+                            "mode": "chose",
+                            "path": [
+                                "Gen AI Consultation"
+                            ]
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:google",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "name",
+                        "type": "text",
+                        "label": "Name",
+                        "required": true
+                    },
+                    {
+                        "name": "content",
+                        "type": "text",
+                        "label": "Content",
+                        "required": true
+                    },
+                    {
+                        "name": "destination",
+                        "type": "select",
+                        "label": "Choose a Drive",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "drive",
+                                "share",
+                                "team"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "header",
+                        "type": "boolean",
+                        "label": "Insert a Header",
+                        "required": true
+                    },
+                    {
+                        "name": "footer",
+                        "type": "boolean",
+                        "label": "Insert a Footer",
+                        "required": true
+                    },
+                    {
+                        "name": "folderId",
+                        "type": "folder",
+                        "label": "New Document's Location",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "module": "resend:sendAnEmail",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 3753013
+            },
+            "mapper": {
+                "from": "onboarding@resend.dev",
+                "to": [
+                    "angela.ethiopia@gmail.com"
+                ],
+                "subject": " GenAI Report for{{1.`3`}}",
+                "sendEmailAs": "html",
+                "html": "{{3.data}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 0
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My Resend connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "resend"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "to": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "bcc": {
+                            "mode": "chose"
+                        },
+                        "cc": {
+                            "mode": "chose"
+                        },
+                        "replyTo": {
+                            "mode": "chose"
+                        },
+                        "sendEmailAs": {
+                            "mode": "chose",
+                            "label": "HTML"
+                        },
+                        "tags": {
+                            "mode": "chose"
+                        },
+                        "attachments": {
+                            "mode": "chose"
+                        },
+                        "headers": {
+                            "mode": "chose"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:resend",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "from",
+                        "type": "text",
+                        "label": "From",
+                        "required": true
+                    },
+                    {
+                        "name": "to",
+                        "type": "array",
+                        "label": "To",
+                        "required": true,
+                        "spec": {
+                            "type": "email",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "bcc",
+                        "type": "array",
+                        "label": "BCC",
+                        "spec": {
+                            "type": "email",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "cc",
+                        "type": "array",
+                        "label": "CC",
+                        "spec": {
+                            "type": "email",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "replyTo",
+                        "type": "array",
+                        "label": "Reply-To",
+                        "spec": {
+                            "type": "email",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "type": "text",
+                        "label": "Subject",
+                        "required": true
+                    },
+                    {
+                        "name": "scheduled_at",
+                        "type": "date",
+                        "label": "Schedule For",
+                        "time": true
+                    },
+                    {
+                        "name": "sendEmailAs",
+                        "type": "select",
+                        "label": "Send Email As",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "html",
+                                "text"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "type": "array",
+                        "label": "Tags",
+                        "spec": [
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "attachments",
+                        "type": "array",
+                        "label": "Attachments",
+                        "spec": [
+                            {
+                                "name": "fileName",
+                                "type": "filename",
+                                "label": "File name"
+                            },
+                            {
+                                "name": "path",
+                                "type": "text",
+                                "label": "Path"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "headers",
+                        "type": "array",
+                        "label": "Custom Headers",
+                        "spec": {
+                            "spec": [
+                                {
+                                    "name": "key",
+                                    "type": "text",
+                                    "label": "Key"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "text",
+                                    "label": "Value"
+                                }
+                            ],
+                            "type": "collection",
+                            "label": "Header",
+                            "name": "value"
+                        }
+                    },
+                    {
+                        "name": "html",
+                        "type": "text",
+                        "label": "HTML Content"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us2.make.com",
+        "notes": []
+    }
+}
