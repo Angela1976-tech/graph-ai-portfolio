@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Generative AI for Work &amp; Research | Portfolio</title>
   <style>
-    /* Forest-tech palette */
     :root {
       --forest: #184a24;
       --leaf:   #2e7d46;
@@ -14,10 +13,7 @@
       --stone:  #fdfdfd;
       --shadow: rgba(0,0,0,.05);
     }
-
-    /* Reset */
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-
     body{
       font-family:"Segoe UI",Arial,sans-serif;
       line-height:1.6;
@@ -27,8 +23,6 @@
     }
     a{color:var(--leaf);text-decoration:none}
     a:hover{text-decoration:underline}
-
-    /* Hero */
     header{
       position:relative;
       background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url("https://github.com/Angela1976-tech/graph-ai-portfolio/blob/main/forest.png?raw=true") center/cover no-repeat;
@@ -39,34 +33,22 @@
     }
     header h1{font-size:2.45rem;font-weight:600;margin-bottom:.6rem}
     header p{opacity:.9;font-size:1.05rem;margin-bottom:2rem}
-
-    /* Badges */
     .facts-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;z-index:2;position:relative}
     .fact{background:rgba(255,255,255,.15);padding:.75rem 1.25rem;border-radius:8px;backdrop-filter:blur(4px);text-align:center}
     .fact .number{font-size:1.7rem;font-weight:700;color:var(--sun);display:block}
     .fact .label{font-size:.875rem;color:var(--stone);opacity:.9}
-
-    /* Decorative overlay */
     svg#network{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;opacity:.45}
     circle{fill:var(--sun)}
     line{stroke:var(--sun);stroke-width:2;stroke-linecap:round}
-
-    /* Layout */
     main{max-width:960px;margin:0 auto 3rem;padding:0 1rem}
     section{background:var(--stone);border-radius:10px;box-shadow:0 6px 16px var(--shadow);padding:2.25rem 2rem;margin-bottom:2rem}
     section h2{font-size:1.55rem;margin-bottom:1rem;border-bottom:2px solid var(--mint);color:var(--leaf);display:inline-block;padding-bottom:.35rem}
     ul{margin-left:1.25rem;margin-top:.5rem}
     li{margin-bottom:.65rem}
-
-    /* Headshot centered in About section */
     .headshot{width:140px;height:140px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 1rem;border:4px solid var(--stone);box-shadow:0 0 0 3px rgba(0,0,0,.08)}
-
-    /* Weekly submissions list */
     #submissions ul{list-style:none;margin-left:0}
     #submissions li{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1rem;border:1px solid #d8e7dc;border-radius:6px;margin-bottom:.55rem;background:linear-gradient(90deg,#f9fdfb 0%,#f0fbf5 100%)}
     #submissions li span{font-weight:600;color:var(--forest)}
-
-    /* Simple tag/button look for CV link */
     .cv-link{
       background:var(--leaf);
       color:var(--stone);
@@ -78,8 +60,6 @@
       transition:background .2s ease;
     }
     .cv-link:hover{background:#25683c;text-decoration:none}
-
-    /* Consultation form styling */
     #contact-consultation iframe{
       width:100%;
       max-width:640px;
@@ -88,9 +68,7 @@
       margin:0 auto;
       display:block;
     }
-
     footer{text-align:center;font-size:.85rem;padding:1rem 0;color:var(--forest)}
-
     @media(max-width:650px){
       header h1{font-size:2rem}
       .facts-grid{gap:1rem}
@@ -102,15 +80,12 @@
   <header>
     <h1>Generative&nbsp;AI for Work &amp;&nbsp;Research</h1>
     <p>Portfolio — Dr.&nbsp;Angela&nbsp;Baschieri</p>
-
     <div class="facts-grid">
       <div class="fact"><span class="number">22+</span><span class="label">Years Experience</span></div>
       <div class="fact"><span class="number">100+</span><span class="label">Publications</span></div>
       <div class="fact"><span class="number">50+</span><span class="label">Countries Worked In</span></div>
       <div class="fact"><span class="number">100+</span><span class="label">Countries Visited</span></div>
     </div>
-
-    <!-- Decorative SVG overlay -->
     <svg id="network" viewBox="0 0 100 100" preserveAspectRatio="none">
       <line x1="5" y1="60" x2="20" y2="40" />
       <line x1="20" y1="40" x2="35" y2="55" />
@@ -129,7 +104,78 @@
   </header>
 
   <main>
-    <!-- About me -->
     <section id="about-me">
       <h2>About me</h2>
-      <img src="https://github.com/Angela1976-tech/graph-ai-portfolio/blob/main/Headshot_Angela_small%20(1).jpg?raw
+      <img src="https://github.com/Angela1976-tech/graph-ai-portfolio/blob/main/Headshot_Angela_small%20(1).jpg?raw=true" alt="Angela Baschieri headshot" class="headshot" />
+      <p>I'm the <strong>Science Leader on Climate Health Impacts at ESR</strong> (Aotearoa New Zealand) and an Honorary Associate Professor at the London School of Hygiene &amp; Tropical Medicine. With more than two decades in international development and public health, I specialise in climate-health research, demographic analysis, and evidence-based policy. Currently, I'm exploring how <em>generative AI</em> can streamline research workflows and amplify impact.</p>
+      <ul>
+        <li>ORCID ID: <a href="https://orcid.org/0000-0002-4763-441X" target="_blank" rel="noopener">0000-0002-4763-441X</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/angelabaschieri" target="_blank" rel="noopener">linkedin.com/in/angelabaschieri</a></li>
+        <li>Focus areas: Climate Change &amp; Health • SRHR • Advanced Statistics • Evidence-based Advocacy</li>
+        <li><a class="cv-link" href="https://drive.google.com/file/d/1XoKRAQZ8egIkr8Wl8TnGsKeI8gJalHHA/view?usp=drive_link" target="_blank" rel="noopener">Download CV (PDF)</a></li>
+      </ul>
+    </section>
+
+    <section id="about-course">
+      <h2>About the course</h2>
+      <p><strong>Live Online Certification — Generative AI for Work &amp; Research Productivity</strong></p>
+      <p>This eight-week, hands-on programme demystifies no-code AI tools so you can automate repetitive tasks, organise knowledge, and accelerate academic or professional output.</p>
+      <ul>
+        <li>Automate document, spreadsheet &amp; data workflows</li>
+        <li>Streamline literature reviews &amp; knowledge management</li>
+        <li>Develop custom chatbots for projects &amp; teams</li>
+        <li>Create professional visuals &amp; presentations with AI</li>
+        <li>Apply skills in a capstone project tailored to your field</li>
+      </ul>
+      <p><em>Real-time support</em> via workshops, help sessions, and online forums.</p>
+      <p><strong>Audience</strong>: Students, faculty, and researchers in health &amp; life-science fields — no coding experience required.</p>
+    </section>
+
+    <section id="submissions">
+      <h2>My weekly submissions</h2>
+      <p>Click the buttons below to view each week’s assignment:</p>
+      <ul>
+        <li>
+          <span>Week 1:</span>
+          <a class="cv-link" href="index.html" target="_blank" rel="noopener">View Week 1 Assignment</a>
+        </li>
+        <li>
+          <span>Week 2:</span>
+          <a class="cv-link" href="report.html" target="_blank" rel="noopener">View Week 2 Assignment</a>
+        </li>
+        <li>
+          <span>Week 3:</span>
+          <a class="cv-link" href="job_analysis_report.html" target="_blank" rel="noopener">View Week 3 Assignment</a>
+        </li>
+        <li>
+          <span>Week 4:</span>
+          <a class="cv-link" href="https://github.com/AngelaBaschieriStats/graph-ai-portfolio/blob/main/bot_screenshot.jpg?raw=true" target="_blank" rel="noopener">View Week 4 Assignment</a>
+        </li>
+        <li>
+          <span>Week 5:</span>
+          <em>Coming soon</em>
+        </li>
+        <li>
+          <span>Week 6:</span>
+          <em>Coming soon</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact-consultation">
+      <h2>Contact for Consultation</h2>
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetzFONDftskbUQKKNqqZ2t3CyORq1k447KRLGdNq5pgK4SGQ/viewform?embedded=true" width="640" height="860" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/06/01/17/20250601174110-781Y2A4O.js"></script>
+
+  <footer>
+    &copy; 2025 Dr. Angela Baschieri
+  </footer>
+</body>
+</html>
+
